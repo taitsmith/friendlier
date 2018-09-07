@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- A string array to hold the possible strings for alert dialogs -->
+    <string-array name="alert_dialog_strings">
+        <item>Friendlier needs permission to access your
+        coarse location (within ~2km) via cell towers and wifi.</item>
+    </string-array>
+</resources>

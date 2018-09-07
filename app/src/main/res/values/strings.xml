@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">friendlier</string>
+
+    <!-- Strings for alert dialogs -->
+    <string name="dialog_request_location_permission">Friendlier needs permission to access your
+        coarse location (within ~2km) via cell towers and wifi. Location is updated when you open
+        the app and stored as lat/long coordinates. Your location is only used to find other nearby
+        users, a history is not stored, and you can delete the information at any time from the
+        \'privacy\' page.</string>
+    <string name="dialog_inform_sign_in">Friendlier requires that you be signed in to use the app\'s
+        functions. You can sign in via the Google account on your phone, or an email.</string>
+
+    <!-- Activity strings-->
+
+    <!-- Sign in activity -->
+    <string name="sign_in_activity_no_user">Looks like you aren\'t signed in. Click the Sign In
+        button to use the Google account on your phone. At the current time this is the only option
+        for sign-in.</string>
+    <string name="sign_in_activity_signed_in">Looks like you\'re all signed in.</string>
 </resources>
