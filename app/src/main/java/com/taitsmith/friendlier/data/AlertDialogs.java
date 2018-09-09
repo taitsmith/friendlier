@@ -1,7 +1,7 @@
 package com.taitsmith.friendlier.data;
 
-import android.app.AlertDialog;
 import android.content.Context;
+import androidx.appcompat.app.AlertDialog;
 
 public class AlertDialogs {
     public Context context;
