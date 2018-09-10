@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 
 import com.taitsmith.friendlier.R;
 
+import io.realm.Realm;
+
 public class FriendlierApplication extends Application {
     public static final String PREFERENCE_NAME = "SharedPrefs";
     private static Context context;
@@ -16,7 +18,7 @@ public class FriendlierApplication extends Application {
         super.onCreate();
         preferences = this.getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         FriendlierApplication.context = getApplicationContext();
-        setTheme(R.style.AppTheme);
+        Realm.init(this);
 
         //check for the first run boolean to determine if users should
         //be shown the explanation of why we request permissions

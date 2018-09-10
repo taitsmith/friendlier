@@ -61,13 +61,14 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Got it", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                requestLocationPermission();
+                requestPermissions();
             }
         });
 
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 
     //users are required to sign in before there's any functionality
     //we'll allow users to use google sign in or email/password.
@@ -92,9 +93,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //request the permissions
-    private void requestLocationPermission() {
+    private void requestPermissions() {
         ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.ACCESS_COARSE_LOCATION}, 13);
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.READ_EXTERNAL_STORAGE}, 13);
     }
 
     @Override
@@ -108,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
                         PackageManager.PERMISSION_GRANTED) {
                     //great, we're good to go. we'll store this in
                     editor.putBoolean("location_perm_granted", true);
-                } else {
-                    editor.putBoolean("location_perm_granted", false);
+                } else if (grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                    editor.putBoolean("storage_perm_granted", true);
                 }
             }
         }

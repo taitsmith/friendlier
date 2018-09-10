@@ -1,10 +1,12 @@
 package com.taitsmith.friendlier.data;
 
+import io.realm.RealmObject;
+
 /**
  * A person.
  *
  */
-public class Person {
+public class Person extends RealmObject {
     private String name, shortBio;
     private double lat, lon; //we'll keep the double that we return from getLastKnownLocation();
     private int age;
