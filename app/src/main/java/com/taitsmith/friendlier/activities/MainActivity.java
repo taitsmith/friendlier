@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (firebaseAuth.getCurrentUser() == null) {
             informUserSignIn();
+        } else {
+            Intent intent = new Intent(this, EditDetailsActivity.class);
+            startActivity(intent);
         }
 
         //should we show the permission explanation?

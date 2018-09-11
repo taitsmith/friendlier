@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.PrivacyActivity" />
-        <activity android:name=".activities.SignInActivity"/>
+        <activity android:name=".activities.SignInActivity" />
+        <activity android:name=".activities.EditDetailsActivity"></activity>
     </application>
 
 </manifest>

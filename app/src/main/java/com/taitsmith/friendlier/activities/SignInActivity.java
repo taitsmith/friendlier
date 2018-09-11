@@ -5,7 +5,9 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,17 +27,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.taitsmith.friendlier.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 
 public class SignInActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 
-    @BindView(R.id.sign_in_button)
     SignInButton signInButton;
-    @BindView(R.id.signInTextView)
     TextView signInTextView;
 
 
@@ -50,9 +48,10 @@ public class SignInActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        ButterKnife.bind(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        signInTextView = findViewById(R.id.signInTextView);
+        signInButton = findViewById(R.id.sign_in_button);
 
         if (firebaseAuth.getCurrentUser() != null) {
             //user is already signed in, nothing to see here.
@@ -76,7 +75,6 @@ public class SignInActivity extends AppCompatActivity implements
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-
     }
 
     @Override
@@ -87,13 +85,6 @@ public class SignInActivity extends AppCompatActivity implements
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
-    }
-
-    //laregly boilerplate google sign-in stuff
-    @OnClick(R.id.sign_in_button)
-    void signIn() {
-        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(apiClient);
-        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @Override
@@ -112,8 +103,6 @@ public class SignInActivity extends AppCompatActivity implements
     private void handleSignInResult(GoogleSignInResult result) {
         if (result.isSuccess()) {
             GoogleSignInAccount account = result.getSignInAccount();
-            signInTextView.setText(R.string.sign_in_activity_signed_in);
-            signInButton.setEnabled(false);
             firebaseAuthWithGoogle(account);
         }
     }
@@ -127,6 +116,11 @@ public class SignInActivity extends AppCompatActivity implements
                         if (task.isSuccessful()) {
                             //great success!
                             firebaseUser = firebaseAuth.getCurrentUser();
+                            signInTextView.setText(R.string.sign_in_activity_signed_in);
+                            signInButton.setEnabled(false);
+
+                            Intent intent = new Intent(SignInActivity.this, EditDetailsActivity.class);
+                            startActivity(intent);
                         } else {
                             Toast.makeText(SignInActivity.this, "Something went wrong",
                                     Toast.LENGTH_SHORT).show();
@@ -135,5 +129,8 @@ public class SignInActivity extends AppCompatActivity implements
                 });
     }
 
-
+    public void signIn(View view) {
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(apiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 }

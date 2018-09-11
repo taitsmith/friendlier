@@ -1,5 +1,8 @@
 package com.taitsmith.friendlier.data;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
 import io.realm.RealmObject;
 
 /**
@@ -7,7 +10,7 @@ import io.realm.RealmObject;
  *
  */
 public class Person extends RealmObject {
-    private String name, shortBio;
+    private String name, shortBio, photoUrl;
     private double lat, lon; //we'll keep the double that we return from getLastKnownLocation();
     private int age;
 
@@ -49,5 +52,13 @@ public class Person extends RealmObject {
 
     public void setLon(double lon) {
         this.lon = lon;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }
