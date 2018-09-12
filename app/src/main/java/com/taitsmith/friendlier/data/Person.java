@@ -1,18 +1,22 @@
 package com.taitsmith.friendlier.data;
 
-import android.graphics.Bitmap;
-import android.net.Uri;
-
+import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * A person.
  *
  */
 public class Person extends RealmObject {
-    private String name, shortBio, photoUrl;
+    private String name, shortBio, accountPhotoUrl;
     private double lat, lon; //we'll keep the double that we return from getLastKnownLocation();
     private int age;
+    private RealmList<String> photoUrls; //for the photos stored in firebase
+
+    @PrimaryKey
+    private int _id;
 
     public String getName() {
         return name;
@@ -54,11 +58,11 @@ public class Person extends RealmObject {
         this.lon = lon;
     }
 
-    public String getPhotoUrl() {
-        return photoUrl;
+    public String getAccountPhotoUrl() {
+        return accountPhotoUrl;
     }
 
-    public void setPhotoUrl(String photoUrl) {
-        this.photoUrl = photoUrl;
+    public void setAccountPhotoUrl(String accountPhotoUrl) {
+        this.accountPhotoUrl = accountPhotoUrl;
     }
 }

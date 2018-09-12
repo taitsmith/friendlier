@@ -98,8 +98,7 @@ public class MainActivity extends AppCompatActivity {
     //request the permissions
     private void requestPermissions() {
         ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.ACCESS_COARSE_LOCATION,
-                Manifest.permission.READ_EXTERNAL_STORAGE}, 13);
+                Manifest.permission.ACCESS_COARSE_LOCATION}, 13);
     }
 
     @Override
@@ -113,16 +112,9 @@ public class MainActivity extends AppCompatActivity {
                         PackageManager.PERMISSION_GRANTED) {
                     //great, we're good to go. we'll store this in
                     editor.putBoolean("location_perm_granted", true);
-                } else if (grantResults[1] == PackageManager.PERMISSION_GRANTED){
-                    editor.putBoolean("storage_perm_granted", true);
                 }
             }
         }
         editor.apply();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
     }
 }

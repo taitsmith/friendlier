@@ -7,6 +7,8 @@
         the app and stored as lat/long coordinates. Your location is only used to find other nearby
         users, a history is not stored, and you can delete the information at any time from the
         \'privacy\' page.</string>
+    <string name="dialog_request_storage_permission">Friendlier needs permission to access the storage
+        on your device to allow you to pick photos.</string>
     <string name="dialog_inform_sign_in">Friendlier requires that you be signed in to use the app\'s
         functions. You can sign in via the Google account on your phone, or an email.</string>
 
@@ -17,4 +19,7 @@
         button to use the Google account on your phone. At the current time this is the only option
         for sign-in.</string>
     <string name="sign_in_activity_signed_in">Looks like you\'re all signed in.</string>
+
+    <!-- firebase strings -->
+    <string name="firebase_storage_base_path">userImages/%1$s/%2$s</string>
 </resources>
