@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.taitsmith.friendlier.R;
+import com.taitsmith.friendlier.data.MainActivityViewModel;
 
 public class MainActivityFragment extends Fragment {
 
@@ -32,7 +33,6 @@ public class MainActivityFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
-        // TODO: Use the ViewModel
     }
 
 }

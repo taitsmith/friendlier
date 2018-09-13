@@ -5,32 +5,14 @@
     android:id="@+id/editdetails"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.editdetails.EditDetailsFragment">
-
-    <TextView
-        android:id="@+id/message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EditDetailsFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ui.EditDetailsFragment">
 
     <ImageView
         android:id="@+id/myProfilePhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:cropToPadding="true"
-        android:maxWidth="100dp"
-        android:maxHeight="100dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
+        style="@style/EditDetailsImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@tools:sample/avatars[13]" />
+        tools:src="@drawable/ic_imageview_placeholder_24px" />
 
     <TextView
         android:id="@+id/editDetailsNameTV"
@@ -46,25 +28,17 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
+        style="@style/EditDetailsImageView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/myProfilePhoto"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@tools:sample/avatars[4]" />
+        tools:src="@drawable/ic_imageview_placeholder_24px" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
+        style="@style/EditDetailsImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@tools:sample/avatars[8]" />
+        tools:src="@drawable/ic_imageview_placeholder_24px" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.taitsmith.friendlier.ui;
+package com.taitsmith.friendlier.data;
 
 import androidx.lifecycle.ViewModel;
 

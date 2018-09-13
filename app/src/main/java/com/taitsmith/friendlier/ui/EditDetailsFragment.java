@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class EditDetailsFragment extends Fragment {
 
     private EditDetailsViewModel viewModel;
     private Person me;
-    private ImageView myProfilePhoto;
+    private ImageView myProfilePhoto, imageView2, imageView3;
     private TextView myNameTV;
 
     public static EditDetailsFragment newInstance() {
@@ -49,6 +50,8 @@ public class EditDetailsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.edit_details_fragment, container, false);
         myNameTV = rootView.findViewById(R.id.editDetailsNameTV);
         myProfilePhoto = rootView.findViewById(R.id.myProfilePhoto);
+        imageView2 = rootView.findViewById(R.id.imageView2);
+        imageView3 = rootView.findViewById(R.id.imageView3);
 
         return rootView;
     }
@@ -61,6 +64,7 @@ public class EditDetailsFragment extends Fragment {
         me = viewModel.getMe();
 
         myNameTV.setText(me.getName());
+
         Picasso.get().load(me.getAccountPhotoUrl()).into(myProfilePhoto);
 
         myProfilePhoto.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +85,8 @@ public class EditDetailsFragment extends Fragment {
             Uri selectedImage = data.getData();
 
             Picasso.get().load(selectedImage).into(myProfilePhoto);
+            Picasso.get().load(selectedImage).into(imageView2);
+            Picasso.get().load(selectedImage).into(imageView3);
 
             viewModel.uploadImage(selectedImage);
         }

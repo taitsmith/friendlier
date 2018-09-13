@@ -12,7 +12,7 @@ import io.realm.annotations.PrimaryKey;
 public class Person extends RealmObject {
     private String name, shortBio, accountPhotoUrl;
     private double lat, lon; //we'll keep the double that we return from getLastKnownLocation();
-    private int age;
+    private int age, uid;
     private RealmList<String> photoUrls; //for the photos stored in firebase
 
     @PrimaryKey

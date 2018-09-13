@@ -15,8 +15,9 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.taitsmith.friendlier.R;
+import com.taitsmith.friendlier.ui.EditDetailsFragment;
+import com.taitsmith.friendlier.ui.MainActivityFragment;
 
-import butterknife.ButterKnife;
 
 import static com.taitsmith.friendlier.activities.FriendlierApplication.preferences;
 
@@ -29,7 +30,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, MainActivityFragment.newInstance())
+                    .commitNow();
+        }
 
         editor = preferences.edit();
 

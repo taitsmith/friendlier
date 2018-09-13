@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.PrivacyActivity" />
         <activity android:name=".activities.SignInActivity" />
-        <activity android:name=".activities.EditDetailsActivity"></activity>
+        <activity android:name=".activities.EditDetailsActivity" />
+        <activity android:name=".activities.PrivacyActivity"></activity>
     </application>
 
 </manifest>

@@ -20,6 +20,9 @@
         for sign-in.</string>
     <string name="sign_in_activity_signed_in">Looks like you\'re all signed in.</string>
 
+    <!-- privacy activity -->
+    <string name="privacy_activity_description"></string>
+
     <!-- firebase strings -->
     <string name="firebase_storage_base_path">userImages/%1$s/%2$s</string>
 </resources>
