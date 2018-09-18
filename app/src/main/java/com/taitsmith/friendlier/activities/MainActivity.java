@@ -15,7 +15,6 @@ import android.os.Bundle;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.taitsmith.friendlier.R;
-import com.taitsmith.friendlier.ui.EditDetailsFragment;
 import com.taitsmith.friendlier.ui.MainActivityFragment;
 
 
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("got it", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                Intent intent = new Intent(MainActivity.this, EditDetailsActivity.class);
                 startActivity(intent);
             }
         });

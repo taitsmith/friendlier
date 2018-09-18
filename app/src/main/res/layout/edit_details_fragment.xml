@@ -12,7 +12,8 @@
         style="@style/EditDetailsImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@drawable/ic_imageview_placeholder_24px" />
+        tools:src="@drawable/ic_imageview_placeholder_24px"
+        android:contentDescription="@string/edit_profile_first_photo_description"/>
 
     <TextView
         android:id="@+id/editDetailsNameTV"
@@ -32,13 +33,39 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/myProfilePhoto"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@drawable/ic_imageview_placeholder_24px" />
+        tools:src="@drawable/ic_imageview_placeholder_24px"
+        android:contentDescription="@string/edit_profile_second_photo_description"/>
 
     <ImageView
         android:id="@+id/imageView3"
         style="@style/EditDetailsImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDetailsNameTV"
-        tools:src="@drawable/ic_imageview_placeholder_24px" />
+        tools:src="@drawable/ic_imageview_placeholder_24px"
+        android:contentDescription="@string/edit_profile_third_photo_description"/>
+
+    <EditText
+        android:id="@+id/bioEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        android:hint="@string/edit_profile_bio_hint"
+        app:layout_constraintTop_toBottomOf="@id/myProfilePhoto"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveDetailsFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_save_24px"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

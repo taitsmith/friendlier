@@ -25,4 +25,12 @@
 
     <!-- firebase strings -->
     <string name="firebase_storage_base_path">userImages/%1$s/%2$s</string>
+
+    <!-- layout strings -->
+    <!-- edit profile layout -->
+    <string name="edit_profile_first_photo_description">ImageView of first photo</string>
+    <string name="edit_profile_second_photo_description">ImageView of second photo</string>
+    <string name="edit_profile_third_photo_description">ImageView of third photo</string>
+    <string name="edit_profile_bio_hint">Write something about yourself.</string>
+
 </resources>
